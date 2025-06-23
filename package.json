@@ -1,0 +1,21 @@
+{
+	"name": "trabajo-practico-4-gaona-axel",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon --exec babel-node src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NatsuX1453/trabajo-practico-4-gaona-axel.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/NatsuX1453/trabajo-practico-4-gaona-axel/issues"
+	},
+	"homepage": "https://github.com/NatsuX1453/trabajo-practico-4-gaona-axel#readme",
+	"description": ""
+}
