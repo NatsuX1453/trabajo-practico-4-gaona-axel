@@ -1,10 +1,10 @@
 {
 	"name": "trabajo-practico-4-gaona-axel",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "app.js",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon --exec babel-node src/index.js"
+		"dev": "nodemon --exec babel-node src/app.js"
 	},
 	"repository": {
 		"type": "git",
@@ -17,5 +17,11 @@
 		"url": "https://github.com/NatsuX1453/trabajo-practico-4-gaona-axel/issues"
 	},
 	"homepage": "https://github.com/NatsuX1453/trabajo-practico-4-gaona-axel#readme",
-	"description": ""
+	"description": "",
+	"dependencies": {
+		"dotenv": "^16.5.0",
+		"express": "^5.1.0",
+		"mysql2": "^3.14.1",
+		"sequelize": "^6.37.7"
+	}
 }
