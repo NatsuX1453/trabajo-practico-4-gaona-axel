@@ -1,4 +1,4 @@
-import { express } from 'express';
+import express from 'express';
 import dotenv from 'dotenv';
 import characterRoutes from './routes/character.route.js';
 import startDB from './config/db.js';
@@ -17,6 +17,6 @@ app.use((req, res) => {
 
 startDB().then(() => {
 	app.listen(PORT, () => {
-		console.log('Servidor corriendo.');
+		console.log('Servidor corriendo en http://localhost:' + PORT);
 	});
 });

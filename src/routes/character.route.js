@@ -1,17 +1,17 @@
 import express from 'express';
 import {
-	createCharacter,
+	CreateCharacter,
 	deleteCharacter,
-	getALLCharacters,
-	getCharacterById,
-	updateCharacter,
+	// getALLCharacters,
+	// getCharacterById,
+	actualizarPersonaje,
 } from '../controllers/character.controller.js';
 const router = express.Router();
 
-router.post('/characters', createCharacter);
-router.get('/characters', getALLCharacters);
-router.get('/characters/:id', getCharacterById);
-router.put('/characters/:id', updateCharacter);
+router.post('/characters', CreateCharacter);
+// router.get('/characters', getALLCharacters);
+// router.get('/characters/:id', getCharacterById);
+router.put('/characters/:id', actualizarPersonaje);
 router.delete('/characters/:id', deleteCharacter);
 
 export default router;
