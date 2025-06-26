@@ -26,10 +26,18 @@ try {
 	const kiEntero = Math.floor(ki);
 	if (kiEntero < 0) return res.status(400).json({ message: 'Ki debe ser un entero' });
 
-	if (gender === 'female' && gender === 'male')
-		return res.status(400).json({ message: 'Género debe ser "female" o "male"' });
+	if (gender === 'Female' && gender === 'Male')
+		return res.status(400).json({ message: 'Género debe ser "Female" o "Male"' });
 
-	const character = await Character.create(req.body);
+	if (typeof description !== 'string' || description.length < 10)
+		return res
+			.status(400)
+			.json({ message: 'Descripción debe ser una cadena de al menos 10 caracteres' });
+
+	const nombreUnico = await Character.findOne({ where: { name } });
+	if (nombreUnico !== null) return res.status(400).json({ message: 'Nombre ya existe' });
+
+	const character = await Character.create({ name, ki, race, gender, description });
 } catch (error) {
 	res.status(500).json({ message: error.message });
 }
