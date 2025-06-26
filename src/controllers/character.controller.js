@@ -46,6 +46,29 @@ export const CreateCharacter = async (req, res) => {
 	}
 };
 
+export const getAllCharacters = async (req, res) => {
+	try {
+		const characters = await Character.findAll();
+
+		if (characters.length > 0) return res.status(200).json(characters);
+
+		return res.status(404).json({ errorMessage: 'La Base de Datos esta vacia.' });
+	} catch (error) {
+		res.status(500).json({ Message: error.message });
+	}
+};
+
+export const getCharacterbyID = async (req, res) => {
+	try {
+		const character = await Character.findByPk(req.params.id);
+		if (character) return res.status(200).json(character);
+
+		return res.status(404).json({ errorMessage: 'Personaje no encontrado.' });
+	} catch (error) {
+		res.status(500).json({ Message: error.message });
+	}
+};
+
 export const actualizarPersonaje = async (req, res) => {
 	const { name, ki, race, gender, description } = req.body;
 
