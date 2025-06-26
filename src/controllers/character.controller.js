@@ -71,3 +71,16 @@ export const actualizarPersonaje = async (req, res) => {
 		res.status(500).json({ message: error.message });
 	}
 };
+
+export const deleteCharacter = async (req, res) => {
+	try {
+		const deleted = await Character.destroy({ where: { id: req.params.id } });
+
+		if (deleted > 0)
+			return res.status(200).json({ Message: 'el personaje a sido eliminado.' });
+
+		return res.status(404).json({ errorMessage: 'el personaje no fue encontrado.' });
+	} catch (error) {
+		res.status(500).json({ Message: error.message });
+	}
+};
